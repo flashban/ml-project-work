@@ -21,7 +21,7 @@ def load_model():
         model: Loaded machine learning model
     """
     try:
-        model = joblib.load('../models/co2_emissions_model.pkl')
+        model = joblib.load('./models/co2_emissions_model.pkl')
         return model
     except Exception as e:
         st.error(f"Error loading model: {e}")
@@ -35,7 +35,7 @@ def main():
     st.title("🌍 Vehicle CO2 Emissions Predictor")
     
     # Load dataset and model
-    df = load_dataset('../data/CO2 Emissions_Canada.csv')
+    df = load_dataset('./data/CO2 Emissions_Canada.csv')
     model = load_model()
     
     if df is None or model is None:
